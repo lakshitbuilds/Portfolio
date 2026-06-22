@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lakshit Suthar · Data Scientist, Data Analyst, Python Developer portfolio. Premium dark theme with glassmorphism." />
+    <meta name="theme-color" content="#050816" />
+    <title>Lakshit Suthar · Data Scientist & Python Developer</title>
+
+    <!-- ===== FONTS & ICONS (CDN) ===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+    <!-- ===== EXTERNAL CSS ===== -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- ====== PROGRESS BAR ====== -->
+    <div id="progress-bar"></div>
+
+    <!-- ====== MOUSE GLOW ====== -->
+    <div id="glow"></div>
+
+    <!-- ====== NAVBAR ====== -->
+    <nav>
+        <div class="container nav-container">
+            <span class="logo">Lakshit.</span>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </div>
+    </nav>
+
+    <!-- ====== HERO ====== -->
+    <section id="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>Hi, I'm <span class="name-highlight">Lakshit Suthar</span></h1>
+                <div class="hero-typing"><span id="typed-text"></span></div>
+                <p class="hero-desc">Data Scientist · Python Developer · turning raw data into actionable insights with machine learning &amp; analytics.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary"><i class="fas fa-code"></i> View Projects</a>
+                    <a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact</a>
+                    <a href="Lakshit_Suthar_Resume.pdf" class="btn btn-outline" id="download-resume"><i class="fas fa-download"></i> Resume</a>
+                </div>
+                <div style="margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px;">
+                    <span class="floating-tag"><i class="fas fa-code"></i> Python</span>
+                    <span class="floating-tag"><i class="fas fa-database"></i> SQL</span>
+                    <span class="floating-tag"><i class="fas fa-chart-line"></i> Data Viz</span>
+                    <span class="floating-tag"><i class="fas fa-brain"></i> ML</span>
+                </div>
+            </div>
+            <div class="hero-profile-card">
+                <div class="badge-row">
+                    <span class="badge"><i class="fas fa-graduation-cap"></i> MCA @ LJU</span>
+                    <span class="badge"><i class="fas fa-bolt"></i> 7+ Projects</span>
+                </div>
+                <h3 style="font-size: 1.6rem;">Lakshit Suthar</h3>
+                <p style="opacity:0.7;">Data Scientist · Python Developer</p>
+                <div class="profile-stats">
+                    <div><i class="fas fa-code"></i> 12+ Skills</div>
+                    <div><i class="fas fa-project-diagram"></i> 7 Projects</div>
+                </div>
+                <div style="margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap;">
+                    <span class="floating-tag">#NumPy</span>
+                    <span class="floating-tag">#Pandas</span>
+                    <span class="floating-tag">#Flask</span>
+                    <span class="floating-tag">#Matplotlib</span>
+                </div>
+                <div style="margin-top: 16px; background: rgba(0,229,255,0.02); border-radius: 40px; padding: 8px 18px; border: 1px solid rgba(0,229,255,0.08);">
+                    <i class="fas fa-map-pin" style="color: var(--primary);"></i> Ahmedabad, IN
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== ABOUT ====== -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title reveal">About Me</h2>
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <i class="fas fa-user-astronaut"></i>
+                    <h3>Professional Summary</h3>
+                    <p>MCA student with a passion for data science &amp; python development. Experienced in building end-to-end data pipelines, scraping, analytics, and machine learning models. Strong foundation in OOP, C, and web technologies.</p>
+                </div>
+                <div class="about-card reveal">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Career Goals</h3>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Data Scientist</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Data Analyst</li>
+                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Python Developer</li>
+                    </ul>
+                </div>
+                <div class="about-card reveal">
+                    <i class="fas fa-star"></i>
+                    <h3>Strengths</h3>
+                    <p>Analytical thinking, problem solving, clean code, data storytelling, and rapid prototyping. Strong collaboration and communication.</p>
+                </div>
+                <div class="about-card reveal">
+                    <i class="fas fa-heart"></i>
+                    <h3>Technical Interests</h3>
+                    <p>Machine Learning, Deep Learning, Big Data, Automation, Web Scraping, Dashboard Design, and Open Source.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== STATS ====== -->
+    <section id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal"><div class="number" data-count="7">0</div><p>Projects</p></div>
+                <div class="stat-item reveal"><div class="number" data-count="12">0</div><p>Skills</p></div>
+                <div class="stat-item reveal"><div class="number" data-count="8">0</div><p>Technologies</p></div>
+                <div class="stat-item reveal"><div class="number" data-count="150">0</div><p>Learning Hours+</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== SKILLS ====== -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title reveal">Skills</h2>
+            <div class="skills-category">
+                <div class="skill-group reveal">
+                    <h4>Programming</h4>
+                    <div class="skill-item"><div class="skill-label"><span>Python</span><span>90%</span></div><div class="progress-bar"><div class="fill" data-width="90"></div></div></div>
+                    <div class="skill-item"><div class="skill-label"><span>Java OOP</span><span>70%</span></div><div class="progress-bar"><div class="fill" data-width="70"></div></div></div>
+                    <div class="skill-item"><div class="skill-label"><span>C</span><span>65%</span></div><div class="progress-bar"><div class="fill" data-width="65"></div></div></div>
+                </div>
+                <div class="skill-group reveal">
+                    <h4>Data Analysis</h4>
+                    <div class="skill-item"><div class="skill-label"><span>NumPy</span><span>85%</span></div><div class="progress-bar"><div class="fill" data-width="85"></div></div></div>
+                    <div class="skill-item"><div class="skill-label"><span>Pandas</span><span>88%</span></div><div class="progress-bar"><div class="fill" data-width="88"></div></div></div>
+                    <div class="skill-item"><div class="skill-label"><span>Matplotlib</span><span>80%</span></div><div class="progress-bar"><div class="fill" data-width="80"></div></div></div>
+                </div>
+                <div class="skill-group reveal">
+                    <h4>Data Science &amp; ML</h4>
+                    <div class="skill-item"><div class="skill-label"><span>Machine Learning</span><span>75%</span></div><div class="progress-bar"><div class="fill" data-width="75"></div></div></div>
+                    <div class="skill-item"><div class="skill-label"><span>Web Scraping</span><span>78%</span></div><div class="progress-bar"><div class="fill" data-width="78"></div></div></div>
+                    <div class="skill-item"><div class="skill-label"><span>Data Visualization</span><span>82%</span></div><div class="progress-bar"><div class="fill" data-width="82"></div></div></div>
+                </div>
+                <div class="skill-group reveal">
+                    <h4>Development Tools</h4>
+                    <div class="skill-item"><div class="skill-label"><span>Git &amp; GitHub</span><span>80%</span></div><div class="progress-bar"><div class="fill" data-width="80"></div></div></div>
+                    <div class="skill-item"><div class="skill-label"><span>Flask</span><span>72%</span></div><div class="progress-bar"><div class="fill" data-width="72"></div></div></div>
+                    <div class="skill-item"><div class="skill-label"><span>HTML / CSS</span><span>70%</span></div><div class="progress-bar"><div class="fill" data-width="70"></div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== PROJECTS ====== -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card reveal"><h3>Mobile Data Analysis</h3><p>Exploratory analysis of mobile usage patterns using pandas &amp; matplotlib.</p><div class="tech"><span>Python</span><span>Pandas</span><span>Matplotlib</span></div><div class="btn-group"><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fab fa-github"></i> Code</a><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fas fa-eye"></i> Demo</a></div></div>
+                <div class="project-card reveal"><h3>Hockey Dataset Analysis</h3><p>Statistical analysis and visualization of hockey player performance.</p><div class="tech"><span>NumPy</span><span>Pandas</span><span>Seaborn</span></div><div class="btn-group"><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fab fa-github"></i> Code</a><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fas fa-eye"></i> Demo</a></div></div>
+                <div class="project-card reveal"><h3>Quotes Scraping Project</h3><p>Scraped inspirational quotes from multiple websites using requests &amp; bs4.</p><div class="tech"><span>Python</span><span>BeautifulSoup</span><span>Requests</span></div><div class="btn-group"><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fab fa-github"></i> Code</a><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fas fa-eye"></i> Demo</a></div></div>
+                <div class="project-card reveal"><h3>All In One Data Scraping</h3><p>Unified scraper for e-commerce &amp; news data with export to CSV/JSON.</p><div class="tech"><span>Scrapy</span><span>Selenium</span><span>Pandas</span></div><div class="btn-group"><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fab fa-github"></i> Code</a><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fas fa-eye"></i> Demo</a></div></div>
+                <div class="project-card reveal"><h3>Student Management System</h3><p>CRUD application built with Flask &amp; SQLite for student records.</p><div class="tech"><span>Flask</span><span>SQLite</span><span>HTML/CSS</span></div><div class="btn-group"><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fab fa-github"></i> Code</a><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fas fa-eye"></i> Demo</a></div></div>
+                <div class="project-card reveal"><h3>Book Management System</h3><p>Library management with Flask, SQLAlchemy &amp; Bootstrap.</p><div class="tech"><span>Flask</span><span>SQLAlchemy</span><span>Bootstrap</span></div><div class="btn-group"><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fab fa-github"></i> Code</a><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fas fa-eye"></i> Demo</a></div></div>
+                <div class="project-card reveal"><h3>Expense Tracker</h3><p>Personal finance tracker with data visualization &amp; category insights.</p><div class="tech"><span>Python</span><span>SQLite</span><span>Matplotlib</span></div><div class="btn-group"><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fab fa-github"></i> Code</a><a href="#" class="btn btn-outline" style="padding:4px 14px;"><i class="fas fa-eye"></i> Demo</a></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== EDUCATION ====== -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title reveal">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item reveal"><h3>MCA – LJ University Ahmedabad</h3><p>2024 – 2026 · Master of Computer Applications</p><span class="badge" style="background: rgba(0,229,255,0.04);">Current</span></div>
+                <div class="timeline-item reveal"><h3>BCA – 73%</h3><p>2021 – 2024 · Bachelor of Computer Applications</p><span class="badge" style="background: rgba(124,58,237,0.08);">Graduated</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CERTIFICATIONS ====== -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title reveal">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card reveal"><i class="fas fa-certificate"></i><h4>Python for Data Science</h4><p style="opacity:0.6; font-size:0.9rem;">IBM</p></div>
+                <div class="cert-card reveal"><i class="fas fa-certificate"></i><h4>Machine Learning A-Z</h4><p style="opacity:0.6; font-size:0.9rem;">Udemy</p></div>
+                <div class="cert-card reveal"><i class="fas fa-certificate"></i><h4>SQL for Data Analysis</h4><p style="opacity:0.6; font-size:0.9rem;">Coursera</p></div>
+                <div class="cert-card reveal"><i class="fas fa-certificate"></i><h4>Web Scraping with Python</h4><p style="opacity:0.6; font-size:0.9rem;">DataCamp</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== SERVICES ====== -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title reveal">Services</h2>
+            <div class="services-grid">
+                <div class="service-card reveal"><i class="fas fa-chart-pie"></i><h4>Data Analysis</h4><p style="opacity:0.7; font-size:0.9rem;">Clean, analyze, visualize</p></div>
+                <div class="service-card reveal"><i class="fab fa-python"></i><h4>Python Development</h4><p style="opacity:0.7; font-size:0.9rem;">Automation, APIs, scripts</p></div>
+                <div class="service-card reveal"><i class="fas fa-spider"></i><h4>Web Scraping</h4><p style="opacity:0.7; font-size:0.9rem;">Extract structured data</p></div>
+                <div class="service-card reveal"><i class="fas fa-dashboard"></i><h4>Dashboard Creation</h4><p style="opacity:0.7; font-size:0.9rem;">Interactive dashboards</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CONTACT ====== -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title reveal">Get in Touch</h2>
+            <div class="contact-form reveal">
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" id="cname" required />
+                    <input type="email" placeholder="Email Address" id="cemail" required />
+                    <textarea rows="4" placeholder="Message" id="cmsg" required></textarea>
+                    <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    <div id="form-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="container">
+        <div>&copy; 2025 Lakshit Suthar · Data Scientist</div>
+        <div class="social-links">
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+        <button id="back-top"><i class="fas fa-arrow-up"></i> Top</button>
+    </footer>
+
+    <!-- ====== EXTERNAL JAVASCRIPT ====== -->
+    <script src="script.js"></script>
+</body>
+</html>
