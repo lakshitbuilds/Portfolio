@@ -239,7 +239,6 @@
         }
 
         const whatsappText =
-            'Hello' +
             '\n\nName: ' + name +
             '\nEmail: ' + email +
             '\nMessage: ' + msg;
