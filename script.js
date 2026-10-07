@@ -244,7 +244,7 @@
             '\nEmail: ' + email +
             '\nMessage: ' + msg;
 
-        const whatsappUrl = 'https://wa.me/91793681?text=' + encodeURIComponent(whatsappText);
+        const whatsappUrl = 'https://wa.me/917976723681?text=' + encodeURIComponent(whatsappText);
 
         formMsg.textContent = 'Opening WhatsApp...';
         formMsg.style.color = 'var(--accent)';
