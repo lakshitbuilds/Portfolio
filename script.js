@@ -55,7 +55,15 @@
 
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
+            themeToggle.classList.remove('theme-switching');
+            void themeToggle.offsetWidth;
+            themeToggle.classList.add('theme-switching');
+
             setTheme(document.body.classList.contains('dark-mode') ? 'light' : 'dark');
+
+            window.setTimeout(function() {
+                themeToggle.classList.remove('theme-switching');
+            }, 550);
         });
     }
 
