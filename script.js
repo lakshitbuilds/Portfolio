@@ -4,7 +4,24 @@
     // ===== THEME TOGGLE =====
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
+    const themeLabel = document.getElementById('themeLabel');
     const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+    function saveTheme(theme) {
+        try {
+            localStorage.setItem('portfolio-theme', theme);
+        } catch (error) {
+            // Theme still works even when browser storage is unavailable.
+        }
+    }
+
+    function getSavedTheme() {
+        try {
+            return localStorage.getItem('portfolio-theme');
+        } catch (error) {
+            return null;
+        }
+    }
 
     function setTheme(theme) {
         const isDark = theme === 'dark';
@@ -14,25 +31,31 @@
             themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
         }
 
+        if (themeLabel) {
+            themeLabel.textContent = isDark ? 'Light' : 'Dark';
+        }
+
         if (themeToggle) {
-            themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-            themeToggle.setAttribute('title', isDark ? 'Light mode' : 'Dark mode');
+            const label = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+            themeToggle.setAttribute('aria-label', label);
+            themeToggle.setAttribute('title', label);
+            themeToggle.setAttribute('aria-pressed', String(isDark));
         }
 
         if (themeMeta) {
             themeMeta.setAttribute('content', isDark ? '#07111f' : '#f6f8fc');
         }
 
-        localStorage.setItem('portfolio-theme', theme);
+        saveTheme(theme);
     }
 
-    const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
-    setTheme(savedTheme);
+    const savedTheme = getSavedTheme();
+    const preferredDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(savedTheme || (preferredDark ? 'dark' : 'light'));
 
     if (themeToggle) {
         themeToggle.addEventListener('click', function() {
-            const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
-            setTheme(nextTheme);
+            setTheme(document.body.classList.contains('dark-mode') ? 'light' : 'dark');
         });
     }
 
