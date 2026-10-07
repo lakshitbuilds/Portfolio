@@ -1,6 +1,41 @@
 (function() {
     'use strict';
 
+    // ===== THEME TOGGLE =====
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const themeMeta = document.querySelector('meta[name="theme-color"]');
+
+    function setTheme(theme) {
+        const isDark = theme === 'dark';
+        document.body.classList.toggle('dark-mode', isDark);
+
+        if (themeIcon) {
+            themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        if (themeToggle) {
+            themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            themeToggle.setAttribute('title', isDark ? 'Light mode' : 'Dark mode');
+        }
+
+        if (themeMeta) {
+            themeMeta.setAttribute('content', isDark ? '#07111f' : '#f6f8fc');
+        }
+
+        localStorage.setItem('portfolio-theme', theme);
+    }
+
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'light';
+    setTheme(savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+            const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+            setTheme(nextTheme);
+        });
+    }
+
     // ===== TYPING EFFECT =====
     const roles = ['Data Scientist', 'Data Analyst', 'Python Developer'];
     let idx = 0,
@@ -190,19 +225,6 @@
     link.click();
     document.body.removeChild(link);
 });
-
-    // ===== PROJECT BUTTONS (placeholder) =====
-    document.querySelectorAll('.project-card .btn-outline').forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            var icon = btn.querySelector('.fab');
-            if (icon) {
-                alert('🔗 GitHub repository (placeholder)');
-            } else {
-                alert('🔗 Live demo (placeholder)');
-            }
-        });
-    });
 
     // ===== INITIAL ACTIVE LINK =====
     updateNavAndProgress();
