@@ -257,7 +257,7 @@
     e.preventDefault();
 
     const link = document.createElement('a');
-    link.href = 'Lakshit_Suthar_Resume.pdf';
+    link.href = 'Lakshit_Suthar_Resume.pdf?v=0216c234';
     link.download = 'Lakshit_Suthar_Resume.pdf';
 
     document.body.appendChild(link);
