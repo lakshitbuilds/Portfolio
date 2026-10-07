@@ -221,6 +221,7 @@
 
     form.addEventListener('submit', function(e) {
         e.preventDefault();
+
         const name = document.getElementById('cname').value.trim();
         const email = document.getElementById('cemail').value.trim();
         const msg = document.getElementById('cmsg').value.trim();
@@ -230,18 +231,25 @@
             formMsg.style.color = '#ff6b6b';
             return;
         }
+
         if (!email.includes('@') || !email.includes('.')) {
             formMsg.textContent = 'Enter a valid email.';
             formMsg.style.color = '#ff6b6b';
             return;
         }
 
-        formMsg.textContent = '✅ Message sent! I\'ll get back soon.';
+        const whatsappText =
+            'Hello' +
+            '\n\nName: ' + name +
+            '\nEmail: ' + email +
+            '\nMessage: ' + msg;
+
+        const whatsappUrl = 'https://wa.me/91793681?text=' + encodeURIComponent(whatsappText);
+
+        formMsg.textContent = 'Opening WhatsApp...';
         formMsg.style.color = 'var(--accent)';
-        form.reset();
-        setTimeout(function() {
-            formMsg.textContent = '';
-        }, 4000);
+
+        window.open(whatsappUrl, '_blank');
     });
 
     // ===== DOWNLOAD RESUME (demo) =====
