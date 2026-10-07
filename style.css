@@ -1184,3 +1184,197 @@ body.dark-mode .nav-links.open {
         transform: translateX(8px);
     }
 }
+
+
+/* ===== REALISTIC SUN / MOON THEME ANIMATION ===== */
+.theme-toggle {
+    position: relative;
+    overflow: visible;
+}
+
+.theme-toggle-track {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.theme-toggle-track::before,
+.theme-toggle-track::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    transition: opacity .45s ease, transform .45s ease;
+}
+
+/* Light mode sky glow */
+.theme-toggle-track::before {
+    inset: 0;
+    background:
+        radial-gradient(circle at 74% 30%, rgba(255,255,255,.9) 0 2px, transparent 3px),
+        radial-gradient(circle at 86% 62%, rgba(255,255,255,.75) 0 1.5px, transparent 2.5px),
+        radial-gradient(circle at 64% 72%, rgba(255,255,255,.65) 0 1.5px, transparent 2.5px),
+        linear-gradient(135deg, #dbeafe, #e0f2fe);
+    opacity: 1;
+    z-index: 0;
+}
+
+/* Dark mode stars */
+.theme-toggle-track::after {
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 28%, #fff 0 1px, transparent 1.8px),
+        radial-gradient(circle at 30% 70%, #fff 0 1px, transparent 1.8px),
+        radial-gradient(circle at 52% 22%, #fff 0 1px, transparent 1.8px),
+        linear-gradient(135deg, #0f172a, #1e1b4b);
+    opacity: 0;
+    z-index: 0;
+}
+
+.theme-toggle-thumb {
+    position: relative;
+    z-index: 2;
+    overflow: visible;
+}
+
+.theme-toggle-thumb::before,
+.theme-toggle-thumb::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: opacity .35s ease, transform .45s cubic-bezier(.22,1,.36,1);
+}
+
+/* Sun rays */
+.theme-toggle-thumb::before {
+    inset: -7px;
+    border: 2px solid rgba(250, 204, 21, .55);
+    box-shadow:
+        0 -9px 0 -7px #facc15,
+        0 9px 0 -7px #facc15,
+        9px 0 0 -7px #facc15,
+        -9px 0 0 -7px #facc15,
+        6px 6px 0 -7px #facc15,
+        -6px -6px 0 -7px #facc15,
+        6px -6px 0 -7px #facc15,
+        -6px 6px 0 -7px #facc15;
+    opacity: 0;
+    transform: scale(.7) rotate(-30deg);
+}
+
+/* Moon crater */
+.theme-toggle-thumb::after {
+    width: 6px;
+    height: 6px;
+    right: 3px;
+    top: 4px;
+    background: rgba(148,163,184,.65);
+    box-shadow:
+        -5px 6px 0 -1px rgba(148,163,184,.5),
+        1px 8px 0 -2px rgba(148,163,184,.45);
+    opacity: 1;
+    transform: scale(1);
+}
+
+.theme-toggle-thumb i {
+    transition: transform .45s cubic-bezier(.22,1,.36,1), opacity .25s ease;
+}
+
+.theme-toggle.theme-switching .theme-toggle-thumb {
+    animation: theme-pop .5s cubic-bezier(.22,1,.36,1);
+}
+
+.theme-toggle.theme-switching .theme-toggle-track {
+    animation: sky-flash .55s ease;
+}
+
+body.dark-mode .theme-toggle-track::before {
+    opacity: 0;
+    transform: scale(1.15);
+}
+
+body.dark-mode .theme-toggle-track::after {
+    opacity: 1;
+}
+
+body.dark-mode .theme-toggle-thumb {
+    background: #f8fafc;
+    color: #cbd5e1;
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,.25),
+        0 0 14px rgba(226,232,240,.45);
+}
+
+body.dark-mode .theme-toggle-thumb::before {
+    opacity: 0;
+    transform: scale(.6) rotate(45deg);
+}
+
+body.dark-mode .theme-toggle-thumb::after {
+    opacity: 1;
+}
+
+body:not(.dark-mode) .theme-toggle-thumb {
+    background: #facc15;
+    color: #f59e0b;
+    box-shadow:
+        0 0 0 1px rgba(245,158,11,.18),
+        0 0 16px rgba(250,204,21,.55);
+}
+
+body:not(.dark-mode) .theme-toggle-thumb::before {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+body:not(.dark-mode) .theme-toggle-thumb::after {
+    opacity: 0;
+    transform: scale(.6);
+}
+
+body:not(.dark-mode) .theme-toggle-thumb i {
+    transform: rotate(180deg) scale(.75);
+    opacity: 0;
+}
+
+body.dark-mode .theme-toggle-thumb i {
+    transform: rotate(0deg) scale(.9);
+    opacity: 0;
+}
+
+@keyframes theme-pop {
+    0% { transform: translateX(var(--toggle-x, 0)) scale(1); }
+    45% { transform: translateX(var(--toggle-x, 0)) scale(1.2); }
+    100% { transform: translateX(var(--toggle-x, 0)) scale(1); }
+}
+
+@keyframes sky-flash {
+    0% { filter: brightness(1); }
+    45% { filter: brightness(1.18); }
+    100% { filter: brightness(1); }
+}
+
+body.dark-mode .theme-toggle {
+    --toggle-x: 16px;
+}
+
+body:not(.dark-mode) .theme-toggle {
+    --toggle-x: 0px;
+}
+
+@media (max-width: 768px) {
+    body.dark-mode .theme-toggle {
+        --toggle-x: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .theme-toggle,
+    .theme-toggle-track,
+    .theme-toggle-thumb,
+    .theme-toggle-thumb::before,
+    .theme-toggle-thumb::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
